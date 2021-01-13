@@ -1,0 +1,26 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Kingfisher (6.0.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - Kingfisher
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ChameleonFramework
+    - Kingfisher
+    - SnapKit
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Kingfisher: adde87a4f74f6a3845395769354efff593581740
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 1a46ef92079c4421023e414d2cd45434b63d2ba8
+
+COCOAPODS: 1.9.1
