@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CNUIBaseKit"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.5"
   spec.summary      = "这是一个SDK，对控件的封装"
 
   # This description is used to generate tags and improve search results.
@@ -26,9 +26,9 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
 			对常用控件的封装，方便更快开发的SDK
-		     DESC
+                   DESC
 
-  spec.homepage     = "https://github.com/Focus111/CNUIBaseKit"
+  spec.homepage     = "http://github.com/Focus111"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,8 +39,9 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
+  # spec.license      = "MIT (example)"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,7 +54,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = "CCN"
+  spec.author             = { "CCN" => "283182544@qq.com" }
   # Or just: spec.author    = "CCN"
   # spec.authors            = { "CCN" => "283182544@qq.com" }
   # spec.social_media_url   = "https://twitter.com/CCN"
@@ -68,7 +69,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "10.0"
 
   #  When using multiple platforms
-  # spec.ios.deployment_target = "10.0"
+  # spec.ios.deployment_target = "5.0"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
@@ -90,13 +91,32 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
+     spec.source_files  =  "CNUIBaseKit/**/*.{h,m}"
 
-  spec.source_files  = "CNUIBaseKit/**/*.{h,m}"
-
-  # "CNUIBaseKit/**/*.{h,m}"
-  # spec.exclude_files = "Classes/Exclude"
+  #  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  #  spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
+
+  #  由于我使用了分组形式，所以此处不设置
+
+  #  ｜---- 分组形式 ---- ｜
+  # 别人在引用当前项目的时候，会以分组形式展示
+
+    #s.subspec 'Tools' do |tools|
+    
+      # 引入Tools文件夹下的所有文件，包括子文件夹里的文件
+      # 如果只公开.h和.m文件的话也可以使用 ["CNUIBaseKit/CNUIBaseKit/Tools/**/*.{h,m}"]
+      #tools.source_files  = ["CNUIBaseKit/CNUIBaseKit/Tools/**/*"]
+
+    #end
+
+    #s.subspec 'Entitys' do |entity|
+    
+      #entity.source_files  = ["CNUIBaseKit/CNUIBaseKit/Entitys/**/*"]
+      #entity.dependency "CNUIBaseKit/Tools"
+
+    #end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -108,19 +128,24 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+  # spec.resources = "CNUIBaseKit/CNUIBaseKit/Resources/*.png"
 
+  # 建议把图片资源文件写成bundle包形式
+  # spec.resources = ["CNUIBaseKit/CNUIBaseKit/Resources/*.{bundle}"]
+
+  # 保存文件路径
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
+
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
-  #
+  # 依赖的系统库
 
   # spec.framework  = "SomeFramework"
-    spec.frameworks = "UIKit", "Foundation"
+  # spec.frameworks = "SomeFramework", "AnotherFramework"
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -136,8 +161,8 @@ Pod::Spec.new do |spec|
   spec.swift_versions = '5.0'
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  #  spec.dependency 'ChameleonFramework/Swift'
-  #  spec.dependency 'SnapKit'
-  #  spec.dependency 'Kingfisher'
+  # spec.dependency "JSONKit", "~> 1.4"
+  # 所依赖的其它三方库，版本号最好写上，为了避免不必要的错误
+
 
 end
