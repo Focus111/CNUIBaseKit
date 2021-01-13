@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CNUIBaseKit"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.summary      = "这是一个SDK，对控件的封装"
 
   # This description is used to generate tags and improve search results.
